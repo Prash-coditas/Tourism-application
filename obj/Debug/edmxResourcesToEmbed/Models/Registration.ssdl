@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TourismModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookingDate" Type="datetime" Nullable="false" />
+    <Property Name="BookingDesc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="BookingPrice" Type="int" Nullable="false" />
+    <Property Name="PackageId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="HotelId" />
+    </Key>
+    <Property Name="HotelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HotelName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="HotelType" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="HotelDesc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="HotelAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="HotelRent" Type="int" Nullable="false" />
+    <Property Name="NumberOfDays" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="PackageId" />
+    </Key>
+    <Property Name="TransporationId" Type="int" Nullable="false" />
+    <Property Name="GuideId" Type="int" Nullable="false" />
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="PackageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="PlaceId" />
+    </Key>
+    <Property Name="PlaceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FamousPlace" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Activities" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TourGuide">
+    <Key>
+      <PropertyRef Name="GuideId" />
+    </Key>
+    <Property Name="GuideId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuideName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GuideMobile" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GuideEmail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="GuideAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="Charges" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transportation">
+    <Key>
+      <PropertyRef Name="TrasnportationId" />
+    </Key>
+    <Property Name="TrasnportationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransportationName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TransportationDesc" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TicketPrice" Type="int" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserMobile" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="BirthDate" Type="date" Nullable="false" />
+    <Property Name="UserAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Booking__Package__6A30C649">
+    <End Role="Package" Type="Self.Package" Multiplicity="1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="PackageId" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="PackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hotel__CityId__5EBF139D">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Package__GuideId__628FA481">
+    <End Role="TourGuide" Type="Self.TourGuide" Multiplicity="1" />
+    <End Role="Package" Type="Self.Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TourGuide">
+        <PropertyRef Name="GuideId" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="GuideId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Package__HotelId__6383C8BA">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="Package" Type="Self.Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="HotelId" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="HotelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Package__Transpo__619B8048">
+    <End Role="Transportation" Type="Self.Transportation" Multiplicity="1" />
+    <End Role="Package" Type="Self.Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transportation">
+        <PropertyRef Name="TrasnportationId" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="TransporationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Package__UserId__6477ECF3">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Package" Type="Self.Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Places__CityId__534D60F1">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Places" Type="Self.Places" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Places">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TourGuide__CityI__5BE2A6F2">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="TourGuide" Type="Self.TourGuide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="TourGuide">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transport__CityI__59063A47">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Transportation" Type="Self.Transportation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Transportation">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__RoleId__4E88ABD4">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TourismModelStoreContainer">
+    <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TourGuide" EntityType="Self.TourGuide" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transportation" EntityType="Self.Transportation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Booking__Package__6A30C649" Association="Self.FK__Booking__Package__6A30C649">
+      <End Role="Package" EntitySet="Package" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hotel__CityId__5EBF139D" Association="Self.FK__Hotel__CityId__5EBF139D">
+      <End Role="City" EntitySet="City" />
+      <End Role="Hotel" EntitySet="Hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Package__GuideId__628FA481" Association="Self.FK__Package__GuideId__628FA481">
+      <End Role="TourGuide" EntitySet="TourGuide" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Package__HotelId__6383C8BA" Association="Self.FK__Package__HotelId__6383C8BA">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Package__Transpo__619B8048" Association="Self.FK__Package__Transpo__619B8048">
+      <End Role="Transportation" EntitySet="Transportation" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Package__UserId__6477ECF3" Association="Self.FK__Package__UserId__6477ECF3">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Package" EntitySet="Package" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Places__CityId__534D60F1" Association="Self.FK__Places__CityId__534D60F1">
+      <End Role="City" EntitySet="City" />
+      <End Role="Places" EntitySet="Places" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TourGuide__CityI__5BE2A6F2" Association="Self.FK__TourGuide__CityI__5BE2A6F2">
+      <End Role="City" EntitySet="City" />
+      <End Role="TourGuide" EntitySet="TourGuide" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transport__CityI__59063A47" Association="Self.FK__Transport__CityI__59063A47">
+      <End Role="City" EntitySet="City" />
+      <End Role="Transportation" EntitySet="Transportation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__RoleId__4E88ABD4" Association="Self.FK__Users__RoleId__4E88ABD4">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
