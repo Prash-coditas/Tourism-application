@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Tourism_1.Models.places_in_city>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Post))
+{
+    <input type="text" name="city">
+    <input type="submit" value="Submit">
+}
+@if (Model != null)
+{
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Activity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fav_place)
+            </th>
+            <th>
+                <label>Place</label>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fav_place)
+                </td>
+                <td>
+                    @{
+
+
+                        var File1 = Convert.ToBase64String(item.image_path);
+                        var imgSrc1 = String.Format("data:File/gif;base64,{0}", File1);
+                        <img class="thumb" src='@imgSrc1' ;" />
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @*@Html.ActionLink("Details", "Search2", "Search", new { id = item.CityId }) |*@
+                    <a asp->
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+
+    </table>
+    @Html.ActionLink("Packages","Data","Package") 
+
+
+
+@*@Html.ActionLink("Show Packages", "GetPackages", "Package");*@
+}

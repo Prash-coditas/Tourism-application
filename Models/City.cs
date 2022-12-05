@@ -18,9 +18,10 @@ namespace Tourism_1.Models
         public City()
         {
             this.Hotels = new HashSet<Hotel>();
-            this.Places = new HashSet<Place>();
-            this.TourGuides = new HashSet<TourGuide>();
+            this.packages = new HashSet<package>();
+            this.places_in_city = new HashSet<places_in_city>();
             this.Transportations = new HashSet<Transportation>();
+            this.TourGuides = new HashSet<TourGuide>();
         }
     
         public int CityId { get; set; }
@@ -29,10 +30,12 @@ namespace Tourism_1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hotel> Hotels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Place> Places { get; set; }
+        public virtual ICollection<package> packages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TourGuide> TourGuides { get; set; }
+        public virtual ICollection<places_in_city> places_in_city { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transportation> Transportations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TourGuide> TourGuides { get; set; }
     }
 }

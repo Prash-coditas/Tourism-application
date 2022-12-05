@@ -13,10 +13,10 @@ namespace Tourism_1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TourismEntities : DbContext
+    public partial class TourismEntities5 : DbContext
     {
-        public TourismEntities()
-            : base("name=TourismEntities")
+        public TourismEntities5()
+            : base("name=TourismEntities5")
         {
         }
     
@@ -25,15 +25,15 @@ namespace Tourism_1.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
-        public virtual DbSet<Package> Packages { get; set; }
-        public virtual DbSet<Place> Places { get; set; }
+        public virtual DbSet<package> packages { get; set; }
+        public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<places_in_city> places_in_city { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TourGuide> TourGuides { get; set; }
         public virtual DbSet<Transportation> Transportations { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<TourGuide> TourGuides { get; set; }
     }
 }

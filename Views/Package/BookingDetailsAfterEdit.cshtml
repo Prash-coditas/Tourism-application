@@ -1,0 +1,55 @@
+﻿@model Tourism_1.Models.BookingData
+
+@{
+    ViewBag.Title = "BookingDetails";
+}
+<div class="booked">
+    <h2 class="place-pg1">Congratulations, Your Tour is booked.</h2>
+
+    <div class="package_details">
+
+
+        <dl class="dl-horizontal pg-detail">
+            <dt>
+                <label class="lb-package">Your Name</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Username)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Package Price</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Journey Start Date</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BookingDate)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Hotel Name</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HotelName)
+            </dd>
+
+            <dt>
+                <label class="lb-package"> City</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CityName)
+            </dd>
+
+        </dl>
+    </div>
+   </div>

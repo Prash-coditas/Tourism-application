@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Tourism_1.Models.TourGuide>
+    @using Tourism_1.Models;
+
+
+    }
+
+@{
+    ViewBag.Title = "GetAllTourGuides";
+}
+
+<div class="hotel-bg">
+    <h2 class="places">Tour Guides</h2>
+
+    <p>
+        @Html.ActionLink("Add TourGuide", "Add_TourGuide","City", htmlAttributes: new { @class = "btn btn-primary add-hotel h-add" })
+    </p>
+    <table class="table table-hover table-bordered tab-hotel" style="background-color:whitesmoke">
+        <tr style="background-color:gray">
+
+            <th>
+                <label>Guide Name</label>
+            </th>
+            <th>
+                <label>Guide Mobile Number</label>
+            </th>
+            <th>
+                <label>Guide Email</label>
+            </th>
+            <th>
+                <label>Guide Address</label>
+            </th>
+           
+            <th>
+                <label>Guide Charges</label>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuideName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuideMobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuideEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuideAddress)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Charges)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.GuideId }) |
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

@@ -12,25 +12,23 @@ namespace Tourism_1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Package
+    public partial class package
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Package()
-        {
-            this.Bookings = new HashSet<Booking>();
-        }
-    
-        public int TransporationId { get; set; }
-        public int GuideId { get; set; }
-        public int HotelId { get; set; }
-        public int UserId { get; set; }
+        public int UniqueId { get; set; }
         public int PackageId { get; set; }
+        public int Transportation_id { get; set; }
+        public int Guide_id { get; set; }
+        public int Hotel_id { get; set; }
+        public int City_id { get; set; }
+        public int Package_price { get; set; }
+        public int User_id { get; set; }
+        public Nullable<int> No_of_days { get; set; }
+        public System.DateTime Tour_Start_Date { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Bookings { get; set; }
+        public virtual City City { get; set; }
         public virtual Hotel Hotel { get; set; }
-        public virtual TourGuide TourGuide { get; set; }
         public virtual Transportation Transportation { get; set; }
         public virtual User User { get; set; }
+        public virtual TourGuide TourGuide { get; set; }
     }
 }

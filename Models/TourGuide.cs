@@ -17,7 +17,7 @@ namespace Tourism_1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TourGuide()
         {
-            this.Packages = new HashSet<Package>();
+            this.packages = new HashSet<package>();
         }
     
         public int GuideId { get; set; }
@@ -30,6 +30,6 @@ namespace Tourism_1.Models
     
         public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Package> Packages { get; set; }
+        public virtual ICollection<package> packages { get; set; }
     }
 }

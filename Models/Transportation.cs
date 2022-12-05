@@ -17,17 +17,16 @@ namespace Tourism_1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Transportation()
         {
-            this.Packages = new HashSet<Package>();
+            this.packages = new HashSet<package>();
         }
     
         public int TrasnportationId { get; set; }
         public string TransportationName { get; set; }
-        public string TransportationDesc { get; set; }
         public int TicketPrice { get; set; }
         public int CityId { get; set; }
     
         public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Package> Packages { get; set; }
+        public virtual ICollection<package> packages { get; set; }
     }
 }

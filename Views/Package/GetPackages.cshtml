@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Tourism_1.Models.Default_package>
+
+@{
+    ViewBag.Title = "GetPackages";
+}
+
+<h2>GetPackages</h2>
+@*@using (Html.BeginForm("GetPackages", "Package"))
+{
+    <input type="text" name="city">
+    <input type="submit" value="Submit">
+}*@
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Package_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CityId)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+
+
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Package_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Show Package Information", "ShowDetails", new { id = item.Id}) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+    }
+
+</table>

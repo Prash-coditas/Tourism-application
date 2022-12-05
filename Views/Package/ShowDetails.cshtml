@@ -1,0 +1,76 @@
+﻿@model Tourism_1.Models.Package_infromation
+
+@{
+    ViewBag.Title = "ShowDetails";
+}
+
+<h2>ShowDetails</h2>
+
+<div>
+    <h4>Package_infromation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Package_name)
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package_name)
+        </dd>*@
+
+        <dt>
+            <label>Transportation Name</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transportation_name)
+        </dd>
+
+        <dt>
+            <label>Guide Name</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guide_name)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Guide_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guide_mobile)
+        </dd>*@
+
+        <dt>
+            <label>Hotel Name</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotel_name)
+        </dd>
+
+        <dt>
+            <label>Number Of Days</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.No_of_days)
+        </dd>
+
+        <dt>
+            <label>Hotel Address</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotel_Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "GetPackages", new { id =Model.Package_id})
+    <@*a asp-action="GetPackages">Back to List</a>*@
+</p>

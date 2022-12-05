@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Prashant\WebApplication1\Tourism-1\Models\Registration.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Prashant\WebApplication1\Tourism-1\Models\TourismModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

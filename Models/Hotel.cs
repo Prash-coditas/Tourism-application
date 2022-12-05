@@ -17,7 +17,7 @@ namespace Tourism_1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Hotel()
         {
-            this.Packages = new HashSet<Package>();
+            this.packages = new HashSet<package>();
         }
     
         public int HotelId { get; set; }
@@ -25,12 +25,14 @@ namespace Tourism_1.Models
         public string HotelType { get; set; }
         public string HotelDesc { get; set; }
         public string HotelAddress { get; set; }
-        public int HotelRent { get; set; }
-        public string NumberOfDays { get; set; }
-        public int CityId { get; set; }
+        public int Hotelrentperday { get; set; }
+        public int Cityid { get; set; }
+        public int UserId { get; set; }
+        public Nullable<int> Status { get; set; }
     
         public virtual City City { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Package> Packages { get; set; }
+        public virtual ICollection<package> packages { get; set; }
     }
 }

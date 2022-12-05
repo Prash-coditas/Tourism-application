@@ -1,0 +1,57 @@
+﻿@model Tourism_1.Models.Payment
+@{
+    ViewBag.Title = "Payment";
+}
+
+
+<div class="n-city-p">
+
+    @using (Html.BeginForm("Payment", "Package"))
+    {
+
+        <div class="col-50 payment-withoutedit ">
+            <h2 class="payment">Payment</h2>
+
+
+            <label class="input pment">Name of Card Holder</label>
+            @Html.TextBoxFor(model => model.Name_on_card, new { placeholder = "Name of card holder", @class = "text", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Name_on_card, "", new { @class = "text-d" })
+
+
+
+            <label class="input pment">Debit card number</label>
+
+            @Html.TextBoxFor(model => model.Debit_card_Number, new { placeholder = "1111-2222-3333-4444", @class = "text", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Debit_card_Number, "", new { @class = "text-d" })
+
+            <label class="input pment">Expiry Month</label>
+            @Html.TextBoxFor(model => model.Exp_Month, new { placeholder = "January", @class = "text", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Exp_Month, "", new { @class = "text-d" })
+
+
+
+            <label class="input pment">Expiry Year</label>
+            @Html.TextBoxFor(model => model.Exp_Year, new { placeholder = "2022", @class = "text", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Exp_Year, "", new { @class = "text-d" })
+
+
+
+            <label class="inpu pment">CVV</label>
+            @Html.TextBoxFor(m => m.Cvv, new { placeholder = "CVV", @class = "text", @required = "required" })
+            @Html.ValidationMessageFor(model => model.Cvv, "", new { @class = "text-d" })
+
+
+        </div>
+
+        <input type="submit" value="Continue" class="btn btn-primary place-buttons-es">
+    }
+</div>
+
+
+
+
+
+
+
+
+

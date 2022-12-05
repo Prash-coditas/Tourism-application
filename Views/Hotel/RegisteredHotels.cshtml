@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Tourism_1.Models.Hotel>
+
+@{
+    ViewBag.Title = "RegisteredHotels";
+}
+
+<div class="hotel-bg">
+    <h2 class="places">Registered Hotels</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-hover table-bordered tab-hotel" style="background-color:whitesmoke">
+        <tr style="background-color:gray">
+            <th>
+                @Html.DisplayNameFor(model => model.HotelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotelrentperday)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hotelrentperday)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Details", "Details", new { id = item.HotelId }) |
+                   
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

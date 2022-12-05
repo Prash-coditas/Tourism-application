@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e8bed6278554b90947152ecc0ffb410" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="TourismModel.City" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.Hotel" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.package" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.Payment" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.places_in_city" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.Role" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.Transportation" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourismModel.User" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="TourismModel.FK__Hotel__Cityid__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__package__City_id__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__places_in__CityI__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__Transport__CityI__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__Hotel__UserId__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__package__Hotel_i__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__package__Transpo__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__package__User_id__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__Payment__UserId__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="TourismModel.FK__Users__RoleId__4E88ABD4" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TourismModel.TourGuide" Width="1.5" PointX="5.25" PointY="14.875" />
+        <AssociationConnector Association="TourismModel.FK__TourGuide__CityI__5BE2A6F2" />
+        <AssociationConnector Association="TourismModel.FK__package__Guide_i__19DFD96B" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

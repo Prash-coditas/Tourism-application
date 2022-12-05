@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tourism_1.Models;
+using Tourism_1.Services;
 
 
 
@@ -12,10 +13,11 @@ namespace Tourism_1.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        TourismEntities tourismEntities;
+        UserdataAccess userdata;
+        
         public HomeController()
         {
-            tourismEntities = new TourismEntities();
+            userdata = new UserdataAccess();
 
         }
         public ActionResult Index()
@@ -36,25 +38,54 @@ namespace Tourism_1.Controllers
 
             return View();
         }
-        [HttpGet]
-        public ActionResult Get()
-        {
-            var result = tourismEntities.Users.Select(x => new Userdata()
-            {
-                UserId = x.UserId,
-                UserName = x.UserName,
-                UserEmail = x.UserEmail,
-                UserMobile = x.UserMobile,
-                BirthDate = x.BirthDate,
-                UserAddress = x.UserAddress,
-                Password=x.Password,
-                RoleId=x.RoleId
-
-
-            }).ToList();
- 
-            ;
-            return View(result);
+        public ActionResult Create()
+        { 
+            //User user = new User();
+            return View();
         }
+        [HttpPost]
+        public ActionResult Create(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                user.RoleId = 2;
+                userdata.Create(user);
+                return RedirectToAction("Login", "Account");
+
+
+            }
+            else
+            {
+                return View();
+            }
+        }
+        //[HttpGet]
+        //[Authorize(Roles ="Admin")]
+        //public ActionResult Get()
+        //{
+        //    var result = userdata.Create()Select(x => new Userdata()
+        //    {
+        //        UserId = x.UserId,
+        //        UserName = x.UserName,
+        //        UserEmail = x.UserEmail,
+        //        UserMobile = x.UserMobile,
+        //        BirthDate = x.BirthDate,
+        //        UserAddress = x.UserAddress,
+        //        Password=x.Password,
+        //        RoleId=x.RoleId
+
+
+        //    }).ToList();
+ 
+        //    //if(User.Identity.Name=="Prashant")
+        //    //{
+        //    //    return View(result);
+        //    //}
+            
+           
+        //        return View(result);
+            
+            
+        //}
     }
 }

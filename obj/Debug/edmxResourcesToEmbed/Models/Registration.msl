@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="TourismModelStoreContainer" CdmEntityContainer="TourismEntities">
-    <EntitySetMapping Name="Bookings">
-      <EntityTypeMapping TypeName="TourismModel.Booking">
-        <MappingFragment StoreEntitySet="Booking">
-          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
-          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
-          <ScalarProperty Name="BookingDesc" ColumnName="BookingDesc" />
-          <ScalarProperty Name="BookingPrice" ColumnName="BookingPrice" />
-          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="TourismModelStoreContainer" CdmEntityContainer="TourismEntities3">
     <EntitySetMapping Name="Cities">
       <EntityTypeMapping TypeName="TourismModel.City">
         <MappingFragment StoreEntitySet="City">
@@ -34,24 +23,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Packages">
-      <EntityTypeMapping TypeName="TourismModel.Package">
-        <MappingFragment StoreEntitySet="Package">
-          <ScalarProperty Name="TransporationId" ColumnName="TransporationId" />
-          <ScalarProperty Name="GuideId" ColumnName="GuideId" />
-          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
+    <EntitySetMapping Name="packages">
+      <EntityTypeMapping TypeName="TourismModel.package">
+        <MappingFragment StoreEntitySet="package">
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
           <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="Transportation_id" ColumnName="Transportation_id" />
+          <ScalarProperty Name="Guide_id" ColumnName="Guide_id" />
+          <ScalarProperty Name="Hotel_id" ColumnName="Hotel_id" />
+          <ScalarProperty Name="City_id" ColumnName="City_id" />
+          <ScalarProperty Name="Package_price" ColumnName="Package_price" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="No_of_days" ColumnName="No_of_days" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Places">
-      <EntityTypeMapping TypeName="TourismModel.Place">
-        <MappingFragment StoreEntitySet="Places">
-          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
-          <ScalarProperty Name="FamousPlace" ColumnName="FamousPlace" />
-          <ScalarProperty Name="Activities" ColumnName="Activities" />
+    <EntitySetMapping Name="places_in_city">
+      <EntityTypeMapping TypeName="TourismModel.places_in_city">
+        <MappingFragment StoreEntitySet="places_in_city">
+          <ScalarProperty Name="place_id" ColumnName="place_id" />
           <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="Fav_place" ColumnName="Fav_place" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -93,7 +87,6 @@
         <MappingFragment StoreEntitySet="Transportation">
           <ScalarProperty Name="TrasnportationId" ColumnName="TrasnportationId" />
           <ScalarProperty Name="TransportationName" ColumnName="TransportationName" />
-          <ScalarProperty Name="TransportationDesc" ColumnName="TransportationDesc" />
           <ScalarProperty Name="TicketPrice" ColumnName="TicketPrice" />
           <ScalarProperty Name="CityId" ColumnName="CityId" />
         </MappingFragment>

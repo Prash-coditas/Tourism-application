@@ -1,0 +1,111 @@
+﻿@model Tourism_1.Models.Package_Information
+
+@{
+    ViewBag.Title = "PackageDetails";
+}
+
+
+
+<div class="n-city-d">
+    <h2 class="place-pg">Your Package</h2>
+
+    <div class="package_details">
+
+
+        <dl class="dl-horizontal pg-detail">
+
+            <dt>
+                <label class="lb-package">Transportation Name</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Transportation_name)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Guide Name</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Guide_name)
+            </dd>
+            <dt>
+
+                <label class="lb-package">Guide Mobile Number</label>
+
+            <dd>
+                @Html.DisplayFor(model => model.Guide_mobile)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Hotel Name</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Hotel_name)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Number Of Days</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.No_of_days)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Hotel Address</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Hotel_Address)
+            </dd>
+
+            <dt>
+                <label class="lb-package">Total Price</label>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+
+        </dl>
+    </div>
+    <p>
+        @if (Session["date"] != null)
+        {
+            @Html.ActionLink("Payment", "Payment", new { packageid = Model.Package_id }, htmlAttributes: new { @class = "btn btn-primary place-buttons-p" })
+        }
+
+        @Html.ActionLink("Customize", "EditPackage", new { packageid = Model.Package_id }, htmlAttributes: new { @class = "btn btn-primary place-buttons-e" })
+
+    </p>
+    @using (Html.BeginForm("Get_Date", "Package", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+
+        <h4 class="start-date">From which date you want to travel?</h4>
+
+
+        <input type="date" id="txtDate" class="form-control rounded1" placeholder=@Convert.ToDateTime(Session["date"]) aria-label="Search" aria-describedby="search-addon" name="date" />
+        <button type="submit" class="btn btn-smm place-buttons-s" onclick="return ValidateDateBox()">Select</button>
+    }
+</div>
+<script>
+    function ValidateDateBox() {
+        var date = document.getElementById("txtDate").value;
+        var varDate = new Date(date);
+        var today = new Date();
+
+        if (document.getElementById("txtDate").value.trim() == "") {
+            alert("PLEASE SELECT DATE!");
+            return false;
+        }
+        else if (varDate <= today) { 
+            alert("DATE SHOULD BE GREATER THAN TODAY!");
+            return false;       
+        }
+    };
+</script>

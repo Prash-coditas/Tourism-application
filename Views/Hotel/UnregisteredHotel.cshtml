@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Tourism_1.Models.Hotel>
+
+@{
+    ViewBag.Title = "UnregisteredHotel";
+}
+
+<div class="n-city">
+    @if (Model == null)
+    {
+                <h2 class="places">No pending Request</h2>
+
+    }
+    else
+    {
+    <h2 class="places">UnRegistered Hotels</h2>
+
+    <table class="table table-hover table-bordered tab-hotel" style="background-color:whitesmoke">
+        <tr style="background-color:gray">
+            <th>
+                @Html.DisplayNameFor(model => model.HotelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotelrentperday)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hotelrentperday)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Reject", "RejectHotel", new { id = item.HotelId }, htmlAttributes: new { @class = "btn btn-primary add-hotel h-edit" }) ||
+                    @Html.ActionLink("Approve", "ApproveHotel", new { id = item.HotelId }, htmlAttributes: new { @class = "btn btn-primary add-hotel h-edit" }) 
+
+                </td>
+            </tr>
+        }
+
+    </table>
+    }
+    </div>

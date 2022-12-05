@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - START YOUR JOURNEY</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,41 +16,63 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Start Your Journey", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-
-                    @*<li>@Html.ActionLink("Signup", "Signup", "User")</li>*@
-
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
 
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
                         <li><a>Dear --   @User.Identity.Name</a></li>
-                        <li>@Html.ActionLink("Get","Get","Home")</li>
-                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                        
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("GetCities", "GetCities", "City")</li>
+                            <li>@Html.ActionLink("All Tour Guides", "GetAllTourGuides", "TourGuide")</li>
+                            <li>@Html.ActionLink("All Places", "All_Places", "Place")</li>
+                            <l1>@Html.ActionLink("Unregistered Hotels", "UnregisteredHotel", "Hotel")</l1>
+                            <l1>@Html.ActionLink("Registered Hotels", "RegisteredHotels","Hotel")</l1>
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+
+
+
+
+                        }
+                        if (User.IsInRole("HotelAdmin"))
+                        {
+
+
+                            <li>@Html.ActionLink("All Hotels", "GetAllHotels", "Hotel")</li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+
+                        }
+                        if (User.IsInRole("User"))
+                        {
+
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                        }
+
 
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
-
+                     
+                        <li>@Html.ActionLink("Register a hotel", "HotelSignup", "User")</li>
+                        <li>@Html.ActionLink("Signup", "Signup", "User")</li>
+                  
                     }
 
                 </ul>
+
             </div>
         </div>
     </div>
+    
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")

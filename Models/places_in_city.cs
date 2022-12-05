@@ -12,12 +12,13 @@ namespace Tourism_1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Place
+    public partial class places_in_city
     {
-        public int PlaceId { get; set; }
-        public string FamousPlace { get; set; }
-        public string Activities { get; set; }
+        public int place_id { get; set; }
         public int CityId { get; set; }
+        public string Activity { get; set; }
+        public string Fav_place { get; set; }
+        public byte[] image_path { get; set; }
     
         public virtual City City { get; set; }
     }

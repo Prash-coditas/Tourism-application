@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Tourism_1.Models.places_in_city>
+
+@{
+    ViewBag.Title = "All_Places";
+}
+<div class="hotel-bg">
+    <h2 class="places">Places</h2>>
+
+    @*<p>
+        @Html.ActionLink("Create New", "Add_Place","Place", htmlAttributes: new { @class = "btn btn-primary add-hotel h-add" })
+    </p>*@
+    <table class="table table-hover table-bordered tab-hotel" style="background-color:whitesmoke">
+        <tr style="background-color:gray">
+
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Activity)
+            </th>
+            <th>
+                <label>Famous Place</label>
+            </th>
+            <th>
+                <label>View</label>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fav_place)
+                </td>
+                <td>
+                    @{
+
+
+                        var File1 = Convert.ToBase64String(item.image_path);
+                        var imgSrc1 = String.Format("data:File/gif;base64,{0}", File1);
+                        <img class="thumb" src='@imgSrc1' ;" />
+                    }
+                </td>
+
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

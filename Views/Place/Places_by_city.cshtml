@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Tourism_1.Models.places_in_city>
+
+@{
+    ViewBag.Title = "Places_by_city";
+
+}
+
+<div class="n-city">
+    @if (Model != null)
+    {
+        <h2 class="places">Places in this city</h2>
+        <table class="table table-hover table-bordered tab" style="background-color:white">
+            <tr style="background-color:gray">
+                <th>
+                    @Html.DisplayNameFor(model => model.Activity)
+                </th>
+                <th>
+                    <label>Favourite Places</label>
+                </th>
+                <th>
+                    <label>Place Photo</label>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Activity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fav_place)
+                    </td>
+                    <td>
+                        @{
+
+
+                            var File1 = Convert.ToBase64String(item.image_path);
+                            var imgSrc1 = String.Format("data:File/gif;base64,{0}", File1);
+                            <img class="thumb" src='@imgSrc1' ;" />
+                        }
+                    </td>
+
+                </tr>
+            }
+
+
+        </table>
+
+
+        @Html.ActionLink("Packages", "ShowPackages", "Package", new { }, htmlAttributes: new { @class = "btn btn-primary place-buttons" })
+        @*@Html.ActionLink("Go for Activities", "AllActivities", new {id=Convert.ToInt32(Session["place_id"]) }, htmlAttributes: new { @class = "btn btn-primary buttons" })*@
+
+    }
+</div>

@@ -129,61 +129,83 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\City1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\PackageController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\PlaceController.cs" />
+    <Compile Include="Controllers\TourGuideController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Booking.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\BookingData.cs" />
     <Compile Include="Models\City.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Default_package.cs" />
     <Compile Include="Models\Hotel.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Package.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+    <Compile Include="Models\package.cs">
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Place.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+    <Compile Include="Models\Package_Information.cs" />
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Registration.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Registration.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Registration.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Registration.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Registration.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Registration.edmx</DependentUpon>
+    <Compile Include="Models\places_in_city.cs">
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TourGuide.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+      <DependentUpon>TourismModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TourismModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourismModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TourismModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourismModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TourismModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourismModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Transportation.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>Registration.tt</DependentUpon>
+      <DependentUpon>TourismModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Userdata.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CityAddAccess.cs" />
+    <Compile Include="Services\HotelDataAccess.cs" />
+    <Compile Include="Services\IDbAccess.cs" />
+    <Compile Include="Services\Packagedataaccess.cs" />
+    <Compile Include="Services\PaymentDataAccess.cs" />
+    <Compile Include="Services\PlaceDataAccess.cs" />
+    <Compile Include="Services\RolesdataAccess.cs" />
+    <Compile Include="Services\TourGuideAccess.cs" />
+    <Compile Include="Services\TransportationDataAccess.cs" />
+    <Compile Include="Services\UserdataAccess.cs" />
+    <Compile Include="WebRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Tajmahal1.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -192,24 +214,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Registration.Context.tt">
+    <Content Include="Images\5716426.jpg" />
+    <Content Include="Images\login-1.png" />
+    <Content Include="Models\TourismModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Registration.Context.cs</LastGenOutput>
-      <DependentUpon>Registration.edmx</DependentUpon>
+      <DependentUpon>TourismModel.edmx</DependentUpon>
+      <LastGenOutput>TourismModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Registration.tt">
+    <Content Include="Models\TourismModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Registration.edmx</DependentUpon>
-      <LastGenOutput>Registration.cs</LastGenOutput>
+      <DependentUpon>TourismModel.edmx</DependentUpon>
+      <LastGenOutput>TourismModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Registration.edmx">
+    <EntityDeploy Include="Models\TourismModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+      <LastGenOutput>TourismModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Registration.edmx.diagram">
-      <DependentUpon>Registration.edmx</DependentUpon>
+    <Content Include="Models\TourismModel.edmx.diagram">
+      <DependentUpon>TourismModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -236,12 +260,47 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Get.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Package\GetPackages.cshtml" />
+    <Content Include="Views\Package\ShowDetails.cshtml" />
     <Content Include="Views\User\Signup.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Home\Get.cshtml" />
+    <Content Include="Views\User\HotelSignup.cshtml" />
+    <Content Include="Views\Hotel\Add_Hotel.cshtml" />
+    <Content Include="Views\Hotel\GetAllHotels.cshtml" />
+    <Content Include="Views\Hotel\GetAllCustomers.cshtml" />
+    <Content Include="Views\Package\UserPackage.cshtml" />
+    <Content Include="Views\City\Add_New_City.cshtml" />
+    <Content Include="Views\City\GetCities.cshtml" />
+    <Content Include="Views\Hotel\Edit.cshtml" />
+    <Content Include="Views\City\Edit.cshtml" />
+    <Content Include="Views\TourGuide\GetAllTourGuides.cshtml" />
+    <Content Include="Views\TourGuide\Add_TourGuide.cshtml" />
+    <Content Include="Views\TourGuide\Edit.cshtml" />
+    <Content Include="Views\City\Search.cshtml" />
+    <Content Include="Views\Place\Places_by_city.cshtml" />
+    <Content Include="Views\Package\PackageDetails.cshtml" />
+    <Content Include="Views\Package\EditPackage.cshtml" />
+    <Content Include="Views\Package\Payment.cshtml" />
+    <Content Include="Views\Place\All_Places.cshtml" />
+    <Content Include="Views\Place\Add_Place.cshtml" />
+    <Content Include="Views\Package\PackageEditDetails.cshtml" />
+    <Content Include="Views\Package\PaymentAfterEdit.cshtml" />
+    <Content Include="Views\Package\PaymentSuccessful.cshtml" />
+    <Content Include="Views\Hotel\GetAllHotels_For_Admin.cshtml" />
+    <Content Include="Views\City\Details.cshtml" />
+    <Content Include="Views\Package\BookingDetails.cshtml" />
+    <Content Include="Views\Place\NoCity.cshtml" />
+    <Content Include="Views\Package\ShowPackages.cshtml" />
+    <Content Include="Views\Package\BookingDetailsAfterEdit.cshtml" />
+    <Content Include="Views\Place\AllActivities.cshtml" />
+    <Content Include="Views\Hotel\RegisteredHotels.cshtml" />
+    <Content Include="Views\Hotel\UnregisteredHotel.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Views\City1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

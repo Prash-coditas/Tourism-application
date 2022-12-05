@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Tourism_1.Models.Hotel>
+
+@{
+    ViewBag.Title = "GetAllHotels";
+}
+
+
+<div class="n-city">
+<h2 class="places">Hotels</h2>
+
+<p>
+    @Html.ActionLink("Add new Hotel", "Add_Hotel", "Hotel", htmlAttributes: new { @class = "btn btn-primary add-hotel h-add" })
+</p>
+<table class="table table-hover table-bordered tab-hotel" style="background-color:whitesmoke">
+    <tr style="background-color:gray">
+        <th>
+            <label>Hotel Name</label>
+        </th>
+        <th>
+            <label>Hotel Type</label>
+        </th>
+        <th>
+            <label>Hotel Description</label>
+        </th>
+        <th>
+            <label>Hotel Address</label>
+        </th>
+        <th>
+            <label>Hotel rent per day </label>
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotelrentperday)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.HotelId }, htmlAttributes: new { @class = "btn btn-primary add-hotel h-edit" })
+                @Html.ActionLink("All Customers", "GetAllCustomers", new { id = item.HotelId }, htmlAttributes: new { @class = "btn btn-primary add-hotel h-edit" })
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.HotelId })*@
+            </td>
+        </tr>
+    }
+
+</table>
+</div>

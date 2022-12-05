@@ -1,0 +1,81 @@
+﻿@model Tourism_1.Models.Hotel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="n-city-p">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4 class="places">Hotel</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.HotelId)
+
+            <div class="form-group">
+         
+                <label class="hotel-label">Hotel Name</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HotelName, new { htmlAttributes = new { @class = "form-control hotel-input" } })
+                    @Html.ValidationMessageFor(model => model.HotelName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="hotel-label">Hotel Type</label>
+           
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HotelType, new { htmlAttributes = new { @class = "form-control hotel-input" } })
+                    @Html.ValidationMessageFor(model => model.HotelType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+      
+                <label class="hotel-label">Hotel Description</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HotelDesc, new { htmlAttributes = new { @class = "form-control hotel-input" } })
+                    @Html.ValidationMessageFor(model => model.HotelDesc, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+       
+                <label class="hotel-label">Hotel Address</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HotelAddress, new { htmlAttributes = new { @class = "form-control hotel-input" } })
+                    @Html.ValidationMessageFor(model => model.HotelAddress, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+     
+                <label class="hotel-label">HotelRent Per Day</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Hotelrentperday, new { htmlAttributes = new { @class = "form-control hotel-input" } })
+                    @Html.ValidationMessageFor(model => model.Hotelrentperday, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="hotel-label">City</label>
+                <div class="col-md-10 hotel-city">
+                    @Html.DropDownListFor(model => model.Cityid, ViewBag.citiesdata as SelectList, "--Select City", new { htmlAttributes = new { @class = "form-control hotel-input1" } })
+                    @Html.ValidationMessageFor(model => model.Cityid, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Update" class="btn btn-default add-hotel-button" />
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+   

@@ -6,43 +6,55 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System.ComponentModel.DataAnnotations;
 
 namespace Tourism_1.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Packages = new HashSet<Package>();
+            this.Hotels = new HashSet<Hotel>();
+            this.packages = new HashSet<package>();
+            this.Payments = new HashSet<Payment>();
         }
     
         public int UserId { get; set; }
         [Required]
         public string UserName { get; set; }
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Please Enter Email Address")]
+        [Display(Name = "Email Address")]
+        [RegularExpression(".+@.+\\..+", ErrorMessage = "Please Enter Correct Email Address")]
         public string UserEmail { get; set; }
-        [Required]
-        
+        [Required(ErrorMessage = "You must provide a phone number")]
+        [Display(Name = " Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string UserMobile { get; set; }
         [Required]
         
         public System.DateTime BirthDate { get; set; }
-        [Required]
-        
+        [Required(ErrorMessage = "Please Enter Address")]
+        [Display(Name = "Address")]
+        [StringLength(200)]
         public string UserAddress { get; set; }
         public int RoleId { get; set; }
-        [Required]
-        
+        [Required(ErrorMessage = "Please Enter Password")]
+        [StringLength(15, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Package> Packages { get; set; }
+        public virtual ICollection<Hotel> Hotels { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<package> packages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Payment> Payments { get; set; }
         public virtual Role Role { get; set; }
     }
 }

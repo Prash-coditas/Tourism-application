@@ -1,13 +1,568 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+.adventure {
+   /* margin-top: 20px;
+    margin-bottom: 10px;*/
+    position: relative;
+    left: 60rem;
+    font-family:Bahnschrift;
+    font-size:50px;
+    top: 5rem;
+    width: 650px;
+    color: white;
+}
+.adventure1 {
+    position: relative;
+    font-family: Bahnschrift;
+    font-size: 50px;
+    top: 3rem;
+    width: 650px;
+    color: white;
+    left: 72rem;
+}
+.adventure2 
+{
+    position: relative;
+    font-family: Bahnschrift;
+    font-size: 60px;
+    top: 1rem;
+    width: 650px;
+    color: white;
+    left: 66rem;
+}
+.rounded {
+    position: relative;
+    left: 65rem;
+    top: 7rem;
+    border: solid;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    /* box-shadow: 5px 10px 8px 10px #888888;*/
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+}
+.rounded1 {
+    position: relative;
+    left: 4rem;
+    bottom: 35rem;
+    border: solid;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    /* box-shadow: 5px 10px 8px 10px #888888;*/
+    width: 270px;
+    height: 50px;
+    font-size: 20px;
+}
+.btn-smm {
+    /* width: 100px;
+    height: 40px;*/
+    margin-bottom: 50px;
+}
+.home1 {
+    position: relative;
+    left: 100rem;
+    top: 2rem;
+    width: 170px;
+    height: 50px;
+    border-radius: 4px;
+    border: solid;
+    font-size: 30px;
+}
+.no-city {
+   
+    width: 1280px;
+    background-image: url('https://img.freepik.com/free-photo/flat-lay-tickets-camera-arrangement_23-2148786103.jpg?w=2000');
+    height: 525px;
+    position: relative;
+    top: 3rem;
+    left: -7rem;
+}
+.n-city {
+    
+    width: 1280px;
+    background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');
+    height: 561px;
+    position: relative;
+    top: -1rem;
+    left: -7rem;
+    font-size: 20px;
+
+}
+.hotel-bg {
+    width: 1280px;
+    background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');
+    height: 2400px;
+    position: relative;
+   
+    top: -1rem;
+    left: -7rem;
+    font-size: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
+
+.n-city-p {
+    width: 1280px;
+    background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');
+    height: 650px;
+    position: relative;
+    top: -1rem;
+    left: -7rem;
+    font-size: 20px
+}
+.n-city1 {
+    /* background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');*/
+    width: 1280px;
+    background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');
+    height: 705px;
+    position: relative;
+    top: -1rem;
+    left: -7rem;
+    font-size: 20px;
+}
+.edit-package
+{
+    font-size:40px;
+    align-items:center;
+    position:relative;
+    top:7rem;
+    margin-left:40rem;
+   /* margin-bottom:10rem;*/
+    
+    /* left:30rem;*/
+}
+
+.n-city-d {
+    width: 1280px;
+    background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');
+    height: 635px;
+    position: relative;
+    /*top: -1rem;*/
+    left: -7rem;
+    right: 5rem;
+    font-size: 17px;
+}
+.edit {
+    width: 1280px;
+    background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');
+    height: 635px;
+    position: relative;
+    /*top: -1rem;*/
+    left: -7rem;
+    right: 5rem;
+    font-size: 17px;
+}
+
+
+
+.booked {
+    background-image: url('https://thumbs.dreamstime.com/z/luggage-hat-camera-studio-shoot-isolated-yellow-background-suitcase-hat-retro-camera-yellow-background-138476983.jpg');
+    width: 1450px;
+    height: 600px;
+    left: -15rem;
+    position: relative;
+    right: 5rem;
+    font-size: 17px;
+}
+
+
+.city-no {
+    width: 680px;
+    color: white;
+    position: relative;
+    left: 60rem;
+    font-size: 45px;
+    top: 8rem;
+    text-align: center;
+}
+
+.buttons {
+      width: 500px;
+    height: 50px;
+    position: relative;
+   left:106rem;
+   top:-17rem;
+   font-size:20px;
+}
+.place-buttons {
+    width: 500px;
+    height: 50px;
+    position: relative;
+    left: 102rem;
+    top: -30rem;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.add-hotel-button {
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width: 500px;
+    height: 50px;
+    position: relative;
+    left: 31rem;
+    top: 1rem;
+}
+.add-hotel-but {
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width: 500px;
+    height: 50px;
+    position: relative;
+    left: 31rem;
+    top: 8rem;
+}
+.add-hotel-butt {
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width: 500px;
+    height: 50px;
+    position: relative;
+    left:31rem;
+    top:3rem;
+}
+.place-buttons1 {
+    width: 500px;
+    height: 50px;
+    position: relative;
+    right: -8rem;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    padding-bottom: 4px;
+}
+.place-buttons2 {
+    width: 500px;
+    height: 50px;
+    position: relative;
+    right: -8rem;
+    top:-0.3rem;
+
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.place-buttons-s {
+    width: 200px;
+    height:45px;
+    position: relative;
+
+    bottom:35rem;
+    left:7rem;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.place-buttons-e {
+    width: 200px;
+    height: 45px;
+    position: relative;
+    /*bottom: rem;*/
+    top:6.5rem;
+    left: 45rem;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.place-buttons-es {
+    width: 250px;
+    height: 45px;
+    position: relative;
+    /*bottom: rem;*/
+    top: 10rem;
+    left: 53rem;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.place-buttons-p {
+    width: 200px;
+    height: 45px;
+    position: relative;
+    /*bottom: rem;*/
+    top: 6.5rem;
+    left: 43rem;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.btn-short {
+    width: 200px;
+    height: 45px;
+    position: relative;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    top:19.5rem;
+    left: 6rem;
+}
+.places {
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    color: black;
+    font-size: 45px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contact {
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    color: white;
+    font-size: 65px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contact-detail {
+    position: relative;
+    top: 7rem;
+    left:5rem;
+    color: black;
+    font-size: 25px;
+}
+
+
+
+
+.image {
+    text-align: center;
+    background-image: url('https://img.freepik.com/free-vector/travel-tourism-label-with-attractions_1284-52995.jpg?w=2000');
+    /* background-image: url('https://previews.123rf.com/images/bloomua/bloomua1307/bloomua130700019/20856918-hand-drawn-vector-illustration-set-of-travel-tourism-and-summer-doodles-elements-isolated-on-white-b.jpg');*/
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    margin-left: 100px;
+}
+.center {
+    width: 400px;
+    height: 300px;
+    border: thin;
+    border-color: dimgray;
+    /* border-radius:50px;*/
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+    border-style: solid;
+    background-color: #949398FF;
+    margin-left: -40px;
+    position: relative;
+    top: 5rem;
+}
+.booked{
+
+}
+.centerr {
+    width: 450px;
+    height: 480px;
+    border: thin;
+    border-color: dimgray;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* border-radius:50px;*/
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    background-color: #949398FF;
+    margin-left: 280px;
+    margin-top: 60px;
+}
+.lagin {
+    position: relative;
+    top: -1.5rem;
+    font-family: Fantasy;
+    font-size:40px;
+    
+}
+.tab-hotel {
+    position: relative;
+    top: 4rem;
+    left: 3rem;
+    width: 1200px;
+    border-color: black;
+    border-width: 10px;
+    border-radius: 2rem;
+    border: solid;
+}
+.tab-customers {
+    position: relative;
+    top: 6rem;
+    left: 8.5rem;
+    width: 1200px;
+    border-color: black;
+    border-width: 10px;
+    border-radius: 2rem;
+    border: solid;
+}
+
+.tab {
+    position: relative;
+    top: 9rem;
+    left: 3rem;
+    width: 1200px;
+    border-color: black;
+    border-width: 10px;
+    border-radius: 2rem;
+    border: solid;
+}
+.tab1 {
+    position: relative;
+    top: 3rem;
+    left: 3rem;
+    width: 1200px;
+    border-color: black;
+    border-width: 10px;
+    border-radius: 2rem;
+    border: solid;
+}
+
+
+.dg {
+    font-size: 12px;
+    position: relative;
+    top: -5rem;
+}
+.dg2 {
+    font-size: 12px;
+    position: relative;
+    top: -4rem;
+    left:1rem;
+}
+.username {
+    position:relative;
+    left:8rem;
+}
+.username1{
+    position:relative;
+    left:10rem;
+    width:200px;
+}
+.username2 {
+    position: relative;
+    left: 10rem;
+    width: 200px;
+    top:1.5rem;
+}
+.username3 {
+    position: relative;
+    left: 10rem;
+    width: 200px;
+    top:1.3rem;
+}
+/*.small-image
+{
+    position:relative;
+    left:2rem;
+}*/
+.login-page {
+    position: relative;
+    top: -1.5rem;
+}
+.login-btn {
+    position: relative;
+    left: 16rem;
+    width: 200px;
+    top: -1rem;
+    border-radius:10px;
+}
+.labell {
+    font-family:Arial;
+    font-size:20px;
+    position:relative;
+    left:8rem;
+
+}
+.labell1 {
+
+    font-family: Arial;
+    font-size: 20px;
+    position: relative;
+    left: 4rem;
+    bottom:0.5rem;
+}
+
+.Login{
+    text-align: center;
+    position: relative;
+    top: -2.5rem;
+    left:6rem;
+}
+/*https://cdn5.vectorstock.com/i/1000x1000/18/34/travel-and-holiday-design-background-vector-14791834.jpg*/
+/*https://img.freepik.com/free-vector/travel-tourism-label-with-attractions_1284-52995.jpg?w=2000*/
+.index {
+    /* background-image: url(../Images/5716426.jpg);*/
+   /*  background-image: url('https://img.freepik.com/premium-photo/traveling-luggage-airport-terminal_34013-3.jpg?size=626&ext=jpg&ga=GA1.2.2046188015.1669812072');*/
+    background-image: url('https://img.freepik.com/free-photo/flat-lay-tickets-camera-arrangement_23-2148786103.jpg?w=2000');
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.place-city
+{
+    background-color:black;
+    color:white;
+}
+/*.drop {
+    height: 20px;
+}*/
+.dropdown {
+    height: 35px;
+    width: 400px;
+    border-color: darkslategrey;
+    position: relative;
+    left: 10rem;
+    border-radius: 3px;
+}
+/*.homepage {
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    margin-bottom: 70px;
+}*/
+.btn-danger
+    text-align:center;
+    align-items:center;
+}
+.control-label {
+    align-items: center;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .85em;
+   
+}
+.labell {
+  position:relative;
+  left:2rem;
+}
+
+}
+.form-horizontal {
+    border: thick;
+    border-color: black;
+    margin-left: 312px;
+    
+}
+
+.
+Set padding to keep content from hitting the edges */
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -15,16 +570,440 @@
 .dl-horizontal dt {
     white-space: normal;
 }
+.button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}*/*/
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
     background-color: #777;
-    border-color: #fff
+    border-color:burlywood;
 }
+.from-group{
+    display:flex;
+    justify-content:center;
+}
+
+/*.control-label{
+    text-align:center;
+    color:aquamarine;*/
+
+.Login {
+    text-align: center;
+
+    position: relative;
+    bottom:2rem;
+
+}
+.usersignup{
+    padding-left:10px;
+}
+.Signup {
+    position: relative;
+    left: 5rem;
+}
+
+
+.username{
+    width:200px;
+}
+
+
+
+
+.prashant {
+   
+    position: relative;
+    right:2rem;
+}
+
+.payment{
+    text-align:center;
+    position:relative;
+    bottom:2rem;
+    
+}
+.pment {
+    text-align: center;
+    position: relative;
+    bottom: 1.5rem;
+    margin-bottom: 25px;
+    display: block;
+}
+.card {
+    text-align: center;
+}
+.ex{
+    margin-left:-50px;
+}
+.input{
+    margin-left:16px;
+}
+
+
+.container1{
+    background-color: #f2f2f2;
+   /* padding: 5px 20px 15px 20px;*/
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+/*input[type=text] {*/
+    /*width: 100%;*/
+    /*margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}*/
+
+=
+
+.icon-container {
+    /*margin-bottom: 20px;*/
+  /*  padding: 7px 0;*/
+    font-size: 24px;
+}
+
+.btn {
+    background-color:burlywood;
+    color: white;
+  /*  padding: 12px;*/
+    
+    border: none;
+    width:200px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+    .btn:hover {
+        background-color:bisque;
+    }
+
+span.price {
+    float: right;
+    color: grey;
+}
+
+.checkout{
+    position:relative;
+    top:5rem;
+    left:55rem;
+
+}
+.php{
+    margin:200px;
+}
+/*.drop {
+    margin-left: 400px;*/
+    /*margin-top: -12px;*/
+    /*margin-bottom:40px;*/
+/*}*/
+.hname {
+    margin-left: 200px;
+    margin-top: -16px;
+}
+.days {
+    margin-left: 200px;
+    margin-top: -18px;
+}
+
+.thumb{
+    width:100px;
+    height:100px;
+}
+
+.validate{
+    position:relative;
+    left:5.5rem;
+    top:-1.5rem
+}
+
+
+
+
+.place-city
+{
+    position:relative;
+    top:5rem;
+}
+.btn-smmm {
+    width: 140px;
+    height: 40px;
+    position: relative;
+    left: 50rem;
+    top: 1rem;
+}
+.btn-city{
+    position:relative;
+    top:22rem;
+        
+}
+.btn-cities{
+    position:relative;
+    left:40rem;
+}
+
+
+.place-pg {
+    position: relative;
+    font-size:40px;
+    font-family:Arial, Helvetica, sans-serif;
+    top: 6rem;
+    color:black;
+    
+    left:52rem;
+}
+.place-pg1 {
+    position: relative;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 6rem;
+    color: black;
+    left: 34rem;
+}
+.place-pgg {
+    position: relative;
+    top: 7.5rem;
+    color: burlywood;
+    left: 52rem;
+}
+.place {
+    text-align: center;
+    position: relative;
+    top: 5rem;
+    color: burlywood;
+}
+.package_details {
+    background-color:gray;
+    border-radius:6px;
+    width:600px;
+    height:350px;
+    color: white;
+    border: 3px solid black;
+
+    position:relative;
+    left:40rem;
+    top:6rem;
+}
+.package_details {
+    background-color:gray;
+    border-radius: 6px;
+    width: 500px;
+    height: 350px;
+    color: white;
+    border: 3px solid black;
+    position: relative;
+    left: 43rem;
+    top: 6rem;
+}
+.pg-detail
+{
+    text-align:center;
+    position:relative;
+    top:5rem;
+    left:3rem;
+    /*font-size:18px;*/
+}
+.lb-package{
+    /*position:relative;
+    left:5px;*/
+    /*text-align:center;*/
+    
+}
+.payment-withoutedit {
+    background-color: gray;
+    position:relative;
+    left:33rem;
+    background-color:gray;
+   /* align-items:center;*/
+ 
+    width: 600px;
+    height: 500px;
+    border: 3px solid black;
+    top:10rem;
+}
+.mode{
+    position:relative;
+    top:6rem;
+}
+.hotelss {
+    position: relative;
+    top: 9rem;
+   /* margin-top:30px;*/
+}
+.nodays {
+    position: relative;
+    top: 12rem;
+    right:20rem;
+}
+.ndays{
+    position:relative;
+    top:12rem;
+    width:200px;
+    left:27rem;
+
+
+}
+
+
+.hohotel {
+    position: relative;
+  
+    padding-top: 10rem;
+    left: 29rem;
+    width: 30px;
+   
+}
+.trans {
+    position: relative;
+    left: 29rem;
+    top: 3.6rem;
+}
+.edit-1 {
+   /* position: relative;
+    left: 4rem;*/
+    /* align-items: center;*/
+}
+.payment-withoutedit1 {
+    /*background-color: gray;*/
+    position: relative;
+    left: 33rem;
+    background-color: gray;
+    width: 550px;
+    height: 350px;
+    border: 3px solid black;
+    top: 10rem;
+}
+.text {
+    text-align: center;
+    position: relative;
+    left: 17rem;
+    bottom: 4.5rem;
+    width: 250px;
+    height: 40px;
+}
+.add-hotel {
+    width: 200px;
+    height: 38px;
+    font-size: 24px;
+    border-radius: 4px;
+    border-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    position:relative;
+    left:2rem;
+   
+}
+.hotel-ad
+{
+    position:relative;
+    padding-left:500px;
+    top:30rem;
+
+
+
+}
+.h-add {
+    top: 2rem;
+    height: 40px;
+}
+.date
+{
+    position:relative;
+    bottom:35rem;
+    left:2rem;
+}
+.start-date {
+    position: relative;
+    bottom: 35rem;
+    left: 2rem;
+    font-size:22px;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+.homedate {
+    position: relative;
+    bottom: 34.5rem;
+    left: 2rem;
+}
+.text-d{
+    color:azure;
+}
+.nocity
+{
+    position:relative;
+    top:20rem;
+}
+/*label {
+    margin-bottom: 10px;
+    display: block;
+}
+*/
+.customers-available {
+    position: relative;
+    margin-top: 30px;
+    top: 20rem;
+}
+.customers {
+    position: relative;
+    top: 7rem;
+    font-family: Fantasy;
+    font-size: 60px;
+    left: 22rem;
+}
+.hotel-label {
+    margin-top: -15px;
+    display: block;
+    position: relative;
+    left: 40rem;
+    top: 10rem;
+}
+.hotel-label1 {
+    margin-top: -15px;
+    display: block;
+    position: relative;
+    left: 40rem;
+    top: 5rem;
+}
+.hotel-input {
+    width: 200px;
+    position: relative;
+    left: 60rem;
+    top: 6rem;
+}
+.hotel-inp {
+    width: 200px;
+    margin-left:600px;
+    margin-top:10px;
+ 
+}
+.hotel-city {
+    margin-left: 600px;
+    margin-top: 70px;
+}
+}
+.hotel-city {
+    padding-left: 100px;
+}
+.hotel-input1 {
+    width: 200px;
+    position: relative;
+    padding-left: 30px;
+    left: 50rem;
+}
+
+
+
+
+    
+
+    
